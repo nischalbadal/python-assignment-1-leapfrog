@@ -1,0 +1,169 @@
+//question no 1
+myList = []
+
+num = int(input("How many numbers in List? "))
+for i in range(num):
+    input_num = int(input("Enter Numbers: "))
+    myList.append(input_num)
+
+print("Largest Element on List: ", max(myList))
+print("Smallest Element on List: ", min(myList))
+
+//question no 2
+for i in range(0,10):
+    for j in range(0,i):
+        print(i, end = " ")
+    print()
+
+//question no 3
+myString = input("Enter any String: ")
+print(myString.swapcase()) 
+
+//question no 4
+myString = input("Enter any String: ")
+list_string = myString.split()
+
+new_string = "-".join(list_string)
+print(new_string)
+
+
+//question no 5
+def difference_consec(nums):
+    result = [b-a for a, b in zip(nums[:-1], nums[1:])]
+    return result
+
+myList = [4, 5, 8, 9, 6, 10]
+
+print("Original list:")
+print(myList)
+print("Difference between consecutive numbers:") 
+print(difference_consec(myList))
+
+//question no 6
+def count_elem(nums):
+    nums = [item for sublist in nums for item in sublist]
+    dict_num = {}
+    for num in nums:
+        if num in dict_num.keys():
+            dict_num[num] += 1
+        else:
+            key = num
+            value = 1
+            dict_num[key] = value
+    return dict_num
+
+myList = [
+        [1,2,3,2],
+        [4,5,6,2],
+        [7,8,9,5],
+       ]    
+print("Original list of lists:")
+print(myList)
+print("\n Frequency of the elements in the said list of lists:")
+print(count_elem(myList))
+
+//question no 7
+def convert_dict(keys, values):
+  return dict(zip(keys, values))
+
+list1 = ['a', 'b', 'c', 'd', 'e', 'f']
+list2 = [1, 2, 3, 4, 5]     
+print("Original lists:")
+print(list1)
+print(list2)
+print("\n Combining the values of two lists into a dictionary:")
+print(convert_dict(list1, list2))
+
+
+//question no 8
+myDict = {'Theodore': 19, 'Roxanne': 22, 'Mathew': 21, 'Betty': 20}
+print("Original dictionary elements")
+print(myDict)
+
+v = list(myDict.values())
+k = list(myDict.keys())
+
+print("the maximum and minimum value of the said dictionary:  ")
+max_key = k[v.index(max(v))]
+min_key = k[v.index(min(v))]
+
+print ((max_key, min_key))
+
+
+//question no 9
+for i in range(5):
+    for j in range(0,i):
+        print("*", end = " ")
+    print()
+for j in range(5, 0,-1):
+    for k in range(j):
+        print("*", end=" ")
+    print()
+
+
+//question no 10
+
+check_list = [ 5, 6, 12, 15]
+
+for num in range(20):
+    if (num in check_list):
+        continue
+    print(num,end=' ')
+    
+print("\n")
+
+//question no 11
+
+input_string = input("Enter any String: ")
+vowels_list = ['a','e','i','o','u']
+count_object = 0
+
+for char in input_string:
+    if (char.lower() in vowels_list):
+        count_object+=1
+
+print("The Count of vowels in given string is: ", count_object)
+
+
+//question no 12
+from itertools import groupby 
+  
+original_list =  [0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+
+  
+print ("Original List : " + str(original_list))
+  
+res = [i[0] for i in groupby(original_list)]
+ 
+print ("After removing consecutive duplicates: : " +  str(res))
+
+//question no 14
+totContent = ""
+print("Enter the Name of File: ")
+fileName = str(input())
+fileHandle = open(fileName, "r")
+
+for content in fileHandle:
+    newContent = content.title()
+    totContent = totContent + newContent
+
+fileHandle.close()
+fileHandle = open(fileName, "w")
+fileHandle.write(totContent)
+
+print("All Words Capitalized Successfully!")
+fileHandle.close()
+
+//question no 15
+def word_starts_with(word, letter):
+    return word.startswith(letter)
+    
+fruits = ["Apple", "Banana", "Pear", "Apricot", "Orange"]
+ 
+upper_fruits = list(map(lambda x:x.upper(),fruits))
+print(upper_fruits)
+
+second_list = list(filter(lambda x: x.startswith("A"), fruits))
+print(second_list)
+
+
