@@ -154,7 +154,7 @@ fileHandle.write(totContent)
 print("All Words Capitalized Successfully!")
 fileHandle.close()
 
-//question no 15
+//question no 16
 def word_starts_with(word, letter):
     return word.startswith(letter)
     
