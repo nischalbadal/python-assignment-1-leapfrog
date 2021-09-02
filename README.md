@@ -1,2 +1,2 @@
 # python-assignment-1-leapfrog
-Python Assignment of First Class Leapfrog Data Internship
+Python Assignments of Leapfrog Data Internship
